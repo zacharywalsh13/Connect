@@ -1,11 +1,17 @@
 import {View, Text, SafeAreaView} from 'react-native';
 import RegisterForm from '../../components/Register/Forms';
 
-const RegisterScreen = () => {
+function RegisterScreen({ navigation }) {
+
+    const loginFunction = () => {
+        navigation.navigate('loginScreen')
+        console.log("Congrats! You've logged in!")
+      }
+
     return (
         <SafeAreaView>
         <View className="items-center justify-center h-full">
-            <RegisterForm />
+            <RegisterForm loginFunction={loginFunction} />
         </View>
         </SafeAreaView>
     );
