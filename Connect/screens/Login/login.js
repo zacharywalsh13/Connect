@@ -7,7 +7,13 @@ import LoginText from '../../components/Login/loginText';
 import LoginForm from '../../components/Login/Forms';
 
 
- const LoginScreen = () => {
+
+ function LoginScreen({ navigation }) {
+
+  const loginFunction = () => {
+    navigation.navigate('MatchesScreen')
+  }
+
   return (
     <SafeAreaView>
 
@@ -15,7 +21,7 @@ import LoginForm from '../../components/Login/Forms';
 
         <LoginText />
 
-        <LoginForm />
+        <LoginForm loginFunction={loginFunction}/>
 
       </View>
 

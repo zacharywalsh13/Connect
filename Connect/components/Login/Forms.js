@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import MatchesScreen from "../../screens/Matches/Matches";
 
-const LoginForm = ({ navigation }) => {
+const LoginForm = props => {
     {/* User Input State */}
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +41,7 @@ const LoginForm = ({ navigation }) => {
             {/* Submit Button */}
             <TouchableOpacity
             className="bg-green-400 text-white font-bold py-2 px-4 rounded w-4/5 items-center"
-            onPress={() => navigation.navigate('MatchesScreen')}
+            onPress={props.loginFunction}
 
             >
             <Text className="text-xl ">Submit</Text>
