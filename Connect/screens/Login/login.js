@@ -1,14 +1,17 @@
 //Login Screen
 import {View, Text, SafeAreaView} from 'react-native';
 
-import LoginText from '../../components/Login/loginText';
-import LoginForm from '../../components/Login/forms';
+import { StatusBar } from "expo-status-bar";
 
- const login = () => {
+import LoginText from '../../components/Login/loginText';
+import LoginForm from '../../components/Login/Forms';
+
+
+ const LoginScreen = () => {
   return (
     <SafeAreaView>
 
-      <View className="items-center">
+      <View className="items-center justify-center h-full">
 
         <LoginText />
 
@@ -19,4 +22,4 @@ import LoginForm from '../../components/Login/forms';
     </SafeAreaView>
   );
 };
-export default login;
+export default LoginScreen;
