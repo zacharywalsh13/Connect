@@ -15,6 +15,11 @@ import LoginForm from '../../components/Login/Forms';
     console.log("Congrats! You've logged in!")
   }
 
+  const RegisterNavigation = () => {
+    navigation.navigate('RegisterScreen')
+    console.log("Register Pressed")
+  }
+
   return (
     <SafeAreaView>
 
@@ -22,7 +27,7 @@ import LoginForm from '../../components/Login/Forms';
 
         <LoginText />
 
-        <LoginForm loginFunction={loginFunction}/>
+        <LoginForm loginFunction={loginFunction} RegisterNavigation={RegisterNavigation} />
 
       </View>
 

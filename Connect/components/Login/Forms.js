@@ -12,7 +12,7 @@ const LoginForm = props => {
   const [password, setPassword] = useState("");
 
     {/* Login Function */}
-    const onPress = () => {
+    const onPressLogin = () => {
       fetch('http://10.0.0.13:3001/users/login', {
         method: 'POST',
         headers: {
@@ -33,6 +33,10 @@ const LoginForm = props => {
         Alert.alert("Login Error", "Something went wrong during login.");
       });
     };
+
+    const onPressRegister = () => {
+      props.RegisterNavigation();
+    }
 
   return (
     <View className="w-full items-center">
@@ -60,14 +64,21 @@ const LoginForm = props => {
             {/* Submit Button */}
             <TouchableOpacity
             className="bg-green-400 text-white font-bold py-2 px-4 rounded w-4/5 items-center"
-            onPress={onPress}
+            onPress={onPressLogin}
 
             >
             <Text className="text-xl ">Submit</Text>
             </TouchableOpacity>
         </View>
         {/* Register Text */}
-        <Text className="mb-0 mt-2 pt-1 text-sm font-semibold">Don't have an account? <Text className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 text-green-400">Register</Text></Text>
+        <Text className="mb-0 mt-2 pt-1 text-sm font-semibold">Don't have an account? </Text>
+        <TouchableOpacity className="pt-1"
+        onPress={onPressRegister}
+        >
+        <Text className="pt-1text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 text-green-400">
+        Register
+        </Text>
+        </TouchableOpacity>
     </View>
   );
 };
