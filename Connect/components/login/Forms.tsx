@@ -1,11 +1,14 @@
-import {Text, View} from 'react-native';
+// Form Template for Login
 
-const FormTemplate = () => {
+import { View, Text } from 'react-native';
+import { styled } from 'nativewind';
+
+const LoginForm = () => {
     return (
         <View>
-            <Text>Form Template</Text>
+        <Text> Login Form </Text>
         </View>
-    )
+    );
 }
 
-export default FormTemplate;
+export default LoginForm;
