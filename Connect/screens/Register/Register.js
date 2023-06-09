@@ -4,7 +4,7 @@ import RegisterForm from '../../components/Register/Forms';
 function RegisterScreen({ navigation }) {
 
     const loginFunction = () => {
-        navigation.navigate('loginScreen')
+        navigation.navigate('LoginScreen')
         console.log("Congrats! You've logged in!")
       }
 
