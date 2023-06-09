@@ -12,6 +12,7 @@ import LoginForm from '../../components/Login/Forms';
 
   const loginFunction = () => {
     navigation.navigate('MatchesScreen')
+    console.log("Congrats! You've logged in!")
   }
 
   return (

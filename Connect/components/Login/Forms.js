@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { View, TextInput, TouchableOpacity, StyleSheet, Text} from "react-native";
+import { View, TextInput, TouchableOpacity, StyleSheet, Text, Alert} from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -11,9 +11,28 @@ const LoginForm = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-    {/* On Press Function */}
-  const onPress = () => {
-  };
+    {/* Login Function */}
+    const onPress = () => {
+      fetch('http://10.0.0.13:3001/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          props.loginFunction();
+        } else {
+          Alert.alert("Login Failed", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        Alert.alert("Login Error", "Something went wrong during login.");
+      });
+    };
 
   return (
     <View className="w-full items-center">
@@ -41,7 +60,7 @@ const LoginForm = props => {
             {/* Submit Button */}
             <TouchableOpacity
             className="bg-green-400 text-white font-bold py-2 px-4 rounded w-4/5 items-center"
-            onPress={props.loginFunction}
+            onPress={onPress}
 
             >
             <Text className="text-xl ">Submit</Text>
