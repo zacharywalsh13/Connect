@@ -3,6 +3,7 @@ import { useState } from "react";
 import { View, TextInput, TouchableOpacity, StyleSheet, Text, Alert} from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
+import { useContext } from "react";
 
 import MatchesScreen from "../../screens/Matches/Matches";
 
@@ -24,6 +25,7 @@ const LoginForm = props => {
       .then(data => {
         if (data.token) {
           props.loginFunction();
+          console.log(data.result);
         } else {
           Alert.alert("Login Failed", data.message);
         }
@@ -67,7 +69,7 @@ const LoginForm = props => {
             onPress={onPressLogin}
 
             >
-            <Text className="text-xl ">Submit</Text>
+            <Text className="text-xl ">Login</Text>
             </TouchableOpacity>
         </View>
         {/* Register Text */}
@@ -75,7 +77,7 @@ const LoginForm = props => {
         <TouchableOpacity className="pt-1"
         onPress={onPressRegister}
         >
-        <Text className="pt-1text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 text-green-400">
+        <Text className="font-bold pt-1text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 text-green-400">
         Register
         </Text>
         </TouchableOpacity>
