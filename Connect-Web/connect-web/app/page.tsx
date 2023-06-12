@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <>  
       <Landing />
+      <Features />
     </>
   );
 }

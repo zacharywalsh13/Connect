@@ -1,0 +1,30 @@
+.landingArea {
+    background-color: purple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .content {
+    width: 50%;
+    padding: 2rem;
+  }
+  
+  .content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .content p {
+    color: white;
+  }
+  
+  .swirlyLine {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, purple, white);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  }
+  
